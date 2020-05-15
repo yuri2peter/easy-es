@@ -155,7 +155,7 @@ POST http://host/get
 - index {string} 索引名
 - type {string} 类型名
 - ids {null | Array\<string\>} 精确限制 id 在某范围内，可留空表示不限
-- keywords {null| string | Array\<string\>} 关键字字符串或数组（表示多个关键字），留空表示不限
+- keywords {null| string | Array\<string\>} 关键字字符串或数组（表示查询多个关键字全部存在的文档），留空表示不限
 - includes {Array\<string\>} 需要返回的字段，默认["id"]
 - from {number} 结果跳过前 N 个（skip）
 - size {number} 返回数目上限（分页大小），要求小于 10k
