@@ -1,4 +1,4 @@
-version: '2.2'
+version: "2.2"
 
 services:
   elasticsearch:
@@ -7,19 +7,31 @@ services:
     cpus: 1
     mem_limit: 2G
     environment:
-     - TZ=Asia/Shanghai
-    ports:
-     - "9200:9200"
-     - "9300:9300"
+      - TZ=Asia/Shanghai
+    # ports:
+    # - "9200:9200"
+    # - "9300:9300"
     volumes:
-     - ./volumes/es:/usr/share/elasticsearch/data
-
-  kibana:
-    image: kibana:5.6
+      - ./volumes/es:/usr/share/elasticsearch/data
+  server:
+    # run "build-docker-server-image.sh" first
+    image: easy-es-server:1.0.0
     cpus: 0.5
-    mem_limit: 500m
+    mem_limit: 1G
     restart: always
+    volumes:
+      - ./volumes/server/configs.js:/app/configs.js
     ports:
-     - "5601:5601"
+      - "80:80"
     links:
-     - elasticsearch
+      - elasticsearch
+  # [kibana] if you need :)
+  # kibana:
+  #   image: kibana:5.6
+  #   cpus: 0.5
+  #   mem_limit: 500m
+  #   restart: always
+  #   ports:
+  #     - "5601:5601"
+  #   links:
+  #     - elasticsearch
