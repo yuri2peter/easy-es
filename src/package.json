@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "cross-env STAGE=production node bin/www",
+    "start": "node bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "cross-env": "^6.0.3",
+    "axios": "^0.19.2",
     "debug": "^4.1.1",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",

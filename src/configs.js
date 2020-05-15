@@ -1,7 +1,12 @@
-/* eslint-disable indent*/
-const STAGE = process.env.STAGE;
-
 module.exports = {
-  stage: STAGE,
   port: 80,
+  esHost: 'http://localhost:9200', // es host
+  schema: {
+    // [index] name
+    default: {
+      name: 5, // field name & weight for each [type]
+      intro: 3,
+      content: 1,
+    },
+  },
 };
