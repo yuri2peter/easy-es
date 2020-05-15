@@ -14,7 +14,7 @@ services:
     volumes:
       - ./volumes/es:/usr/share/elasticsearch/data
   server:
-    # run "build-docker-server-image.sh" first
+    # run "sh build-docker-server-image.sh" to build the image
     image: easy-es-server:1.0.0
     cpus: 0.5
     mem_limit: 1G
