@@ -22,7 +22,7 @@
     "moment-timezone": "^0.5.27",
     "node-fetch": "^2.6.0",
     "pug": "^2.0.3",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
